@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { registerUser } from '../api';
 
-
+<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>
 const Register = ({ setToken, navigate }) => {
   // props.setToken
   // const {setToken} = props

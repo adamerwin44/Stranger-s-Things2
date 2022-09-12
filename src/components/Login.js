@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api';
 
+
 const Login = (({ setToken, navigate }) => {
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
-  
+<h3 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h3>
 
   const handleSubmit = async () => {
     const results = await loginUser(username, password);
@@ -17,6 +18,7 @@ const [password, setPassword] = useState('');
     }
   }
     return(
+    
         <form id='loginform' onSubmit={(event) => {
             event.preventDefault();
             handleSubmit();
@@ -31,6 +33,7 @@ const [password, setPassword] = useState('');
             />
             <button type='submit'>Submit</button>
         </form>
+     
     )
 })
 export default Login;

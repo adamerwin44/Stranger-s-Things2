@@ -1,52 +1,70 @@
-
-
-import React from 'react';
 import { createPost } from '../api';
+import React, { useState } from 'react';
 
-const CreatePost = ({ token }) => {
-  const newPost = {
-    title: 'test post',
-    description: 'testing',
-    price: 'free',
-    location: 'state',
-    willDeliver: false
-  }
+const CreatePost = ({ token,fetchPosts, navigate }) => {
+ const [title, setTitle] = useState('');
+const [description, setDescription] = useState('');
+const [price, setPrice] = useState('');
+const [location, setLocation] = useState('');
+const [willDeliver, setWillDeliver] = useState('');
+<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>  
+const newPost = {
   
+    title,
+    description,
+    price,
+    location,
+    willDeliver
+  }
+
   async function addPost() {
     const result = await createPost(token, newPost)
-    console.log(result)
+        console.log(result)
+    fetchPosts();
+    navigate('/posts')
   }
-  
   return (
     // This needs to be a form that accepts the 5 request parameters for creating a post
+    <>
+     <form  class='form' onSubmit={(event) => {
+      event.preventDefault();
+      addPost();
+   
+    }}>
     <input
-    type='text'
-    placeholder={title}
-    onChange={(ev) => setNewTitle(ev.target.value)}
-    
-/>
-<input
-    type='text'
-    placeholder={title}
-    onChange={(ev) => setNewDescription(ev.target.value)}
-    
-/>
-
-<input
-    type='text'
-    placeholder={location}
-    onChange={(ev) => setNewLocation(ev.target.value)}
-    
-/>
-
-<input
-    type='text'
-    placeholder={price}
-    onChange={(ev) => setNewPrice(ev.target.checked)}
-    
-/>
-    <button onClick={() => addPost()}>Create a New Post</button>
+      class="createPost"
+        type='text'
+        placeholder='Title'
+        onChange={(event) => setTitle(event.target.value)}
+      />
+       <input
+      class="createPost"
+      id='description'
+        type='text'
+        placeholder='Description'
+        onChange={(event) => setDescription(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='text'
+        placeholder='Price'
+        onChange={(event) => setPrice(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='text'
+        placeholder='Location'
+        onChange={(event) => setLocation(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='checkbox'
+        placeholder='Will deliver'
+        onChange={(event) => setWillDeliver(event.target.checked)}
+      />
+    <button type="submit">Create a New Post</button>
+    </form>
+    </>
   )
 }
-
 export default CreatePost;

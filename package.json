@@ -12,14 +12,13 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@mui/material": "^5.10.3",
+    "@mui/material": "^5.10.4",
     "bootstrap": "^5.2.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^2.1.3",
-    "webpack": "^4.19.1",
+    "react-scripts": "^5.0.1",
     "webpack-cli": "^4.10.0"
   },
   "browserslist": {
@@ -34,5 +33,8 @@
       "last 1 safari version"
     ]
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "webpack": "^4.19.1"
+  }
 }

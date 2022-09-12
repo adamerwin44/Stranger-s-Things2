@@ -1,63 +1,74 @@
-import React from  'react';
+import React, { useState } from 'react';
+import {updatePost, deletePost, getPosts} from '../api'
 import { useParams } from 'react-router-dom';
-
-const EditPost = () => {
-    const { postID } = useParams();  
+const EditPost = ({ posts, token,fetchPosts, navigate }) => {
+    const { postID } = useParams();
     const [currentPost] = posts.filter(post => post._id === postID);
-
-    const {title, description, location, price, willDeliver} = currentPost;    
-
-    const [title, setTitle] = useState('');
-    cosnt [newtitle, setNewTitle] = useState(title);
-    const [newDescription, setNewDescription] = useState (description);
-    const [newLocation, setNewLocation] = useState(location);
-    const [newPrice, setNewPrie] = useState(price);
-    const [newWillDeliver, setNewWillDeliver] = useState(willDeliver);
-
-
-    return (
-        <form onSubmit={ (ex) => {
-            eval.preventDefault();
-            console.log('form submitted')
-        }}>
-
-        <input
-            type='text'
-            placeholder={title}
-            onChange={(ev) => setNewTitle(ev.target.value)}
-            
-        />
-        <input
-            type='text'
-            placeholder={title}
-            onChange={(ev) => setNewDescription(ev.target.value)}
-            
-        />
-
-        <input
-            type='text'
-            placeholder={location}
-            onChange={(ev) => setNewLocation(ev.target.value)}
-            
-        />
-
-        <input
-            type='text'
-            placeholder={price}
-            onChange={(ev) => setNewPrice(ev.target.checked)}
-            
-        />
-
-        <input
-            type='checkbox'
-            checked={newWillDeliver}
-            onChange={(ev) => setNewWillDeliver(ev.target.checked)}
-            />
-
-        <button type='submit'>Edit Your Post</button>
-        </form>
-       
-    )
+    const {title, description, location, price, willDeliver} = currentPost;
+ const [newtitle, setNewTitle] = useState(title);
+const [newdescription, setNewDescription] = useState(description);
+const [newprice, setNewPrice] = useState(price);
+const [newlocation, setNewLocation] = useState(location);
+const [newwillDeliver, setNewWillDeliver] = useState(willDeliver);
+async function editPost() {
+    const updatedPost = {
+        title: newtitle,
+        description: newdescription,
+        price: newprice,
+        location: newlocation,
+        willDeliver: newwillDeliver
     }
-
+    await updatePost(token,updatedPost,postID)
+    fetchPosts();
+    navigate('/posts')
+  }
+  return (
+    // This needs to be a form that accepts the 5 request parameters for creating a post
+    <>
+     <form  class='form' onSubmit={(event) => {
+      event.preventDefault();
+      editPost();
+      window.location - '/posts'
+    }}>
+    <input
+      class="createPost"
+        type='text'
+        placeholder={title}
+        onChange={(event) => setNewTitle(event.target.value)}
+      />
+       <input
+      class="createPost"
+      id='description'
+        type='text'
+        placeholder={description}
+        onChange={(event) => setNewDescription(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='text'
+        placeholder={price}
+        onChange={(event) => setNewPrice(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='text'
+        placeholder={location}
+        onChange={(event) => setNewLocation(event.target.value)}
+      />
+       <input
+      class="createPost"
+        type='checkbox'
+        checked={newwillDeliver}
+        onChange={(event) => setNewWillDeliver(event.target.checked)}
+      />
+    <button type="submit">Edit Post</button>
+    <button type="submit" onClick={() =>{
+      deletePost(token,postID);
+    }}>
+      Delete
+    </button>
+    </form>
+    </>
+   )
+}
 export default EditPost;
