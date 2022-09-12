@@ -37,47 +37,54 @@ header > h1 {
   font-family: cursive, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#CreatePost{
+.CreatePost{
 background-color: #444;
 
 
 }
+.form{
+  background-color:cadetblue ;
+}
 
 
-
-EditPost {
+.EditPost {
   background-color: #4444;
 }
 
 
-Home {
+.Home {
   background-color: burlywood;
 
 }
 
-Login {
+.Login {
   background-color: #4444;
   
 }
 
-Navbar {
+.Navbar {
   background-color: burlywood;
 
 }
 
-Posts {
+.Posts {
   background-color: #4444;
 }
 
 
-Profile {
+.Profile {
   background-color: burlywood;
 }
 
-Register {
+.Register {
   background-color: aqua;
 }
+.register-form{
+  display: flex;
+  flex-grow:1;
+  justify-content: center;
 
-SinglePostView {
+}
+.SinglePostView {
   background-color: #4444;
 }

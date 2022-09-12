@@ -62,7 +62,8 @@ async function editPost() {
         onChange={(event) => setNewWillDeliver(event.target.checked)}
       />
     <button type="submit">Edit Post</button>
-    <button type="submit" onClick={() =>{
+    <button type="submit" onClick={async(event) =>{
+      event.preventDefalut();
       deletePost(token,postID);
     }}>
       Delete

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>
+<h1>Welcome to Adam's Version of Stranger's Things!</h1>
 const Navbar = ({ logout, token }) => {
   return (
     <header>
@@ -16,6 +16,7 @@ const Navbar = ({ logout, token }) => {
             <>
               <Link to='/register'>Register</Link>
               <Link to='/login'>Login</Link>
+              <Link to='EditPost'>EditPost</Link>
               
             </>
           )

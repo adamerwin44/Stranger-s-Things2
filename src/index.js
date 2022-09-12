@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
+import './style.css';
 
-import { Button } from '@mui/material';
 
 import {
   Navbar,
@@ -105,6 +105,11 @@ const App = () => {
           path='/profile' 
           element={<Profile user={ user }/>} 
         />
+         <Route 
+          path='/EditPost' 
+          element={<EditPost user={ user }/>} 
+        />
+
         <Route 
           path='/register' 
           element={<Register 

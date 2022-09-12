@@ -1,5 +1,7 @@
 import React, { Fragment,useState } from 'react';
 import { Link } from 'react-router-dom';
+import"./Posts.css";
+
 const Posts = ({ posts }) => {
     const [searchTerm, setSearchTerm] = useState('');
     function postMatches(post, string) {
