@@ -152,6 +152,7 @@ export const createMessage = async ({postID, token, message}) => {
 }
 
 export const deletePost = async (token, postID) => {
+ //console log parameters
   try {
     const response = await fetch(`${baseURL}/posts/${postID}`, {
       method: "DELETE",

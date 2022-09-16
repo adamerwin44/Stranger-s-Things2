@@ -1,7 +1,5 @@
 import React, { Fragment,useState } from 'react';
 import { Link } from 'react-router-dom';
-import"./Posts.css";
-
 const Posts = ({ posts }) => {
     const [searchTerm, setSearchTerm] = useState('');
     function postMatches(post, string) {
@@ -24,7 +22,7 @@ const Posts = ({ posts }) => {
                type = 'text'
                placeholder = 'Search'
                onChange = {(event) => setSearchTerm(event.target.value)}
-              />
+              ></input>
               <button type='Search'>Search</button>
              </form>
             </div>

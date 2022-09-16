@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
-import './style.css';
+// import './style.css';
 
 
 import {
@@ -92,6 +92,8 @@ const App = () => {
           element={<EditPost 
             posts={ posts }
             token={ token }
+            fetchPosts = { fetchPosts }
+            navigate = {navigate }
           />}
         />
         <Route
@@ -105,10 +107,7 @@ const App = () => {
           path='/profile' 
           element={<Profile user={ user }/>} 
         />
-         <Route 
-          path='/EditPost' 
-          element={<EditPost user={ user }/>} 
-        />
+    
 
         <Route 
           path='/register' 

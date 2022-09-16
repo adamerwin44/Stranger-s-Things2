@@ -63,8 +63,12 @@ async function editPost() {
       />
     <button type="submit">Edit Post</button>
     <button type="submit" onClick={async(event) =>{
-      event.preventDefalut();
+      console.log ("anystring")
+      event.preventDefault();
+      //prevents from refreshing
+      //console log token and post ID
       deletePost(token,postID);
+      
     }}>
       Delete
     </button>

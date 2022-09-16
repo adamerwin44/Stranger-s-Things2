@@ -1,0 +1,98 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+}
+
+
+.app {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-gap: 6px;
+  
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #444;
+}
+
+header {
+  background-color: #19a7ff;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > h1 {
+  padding-left: 6px;
+  font-size: 40px;
+  font-family: cursive, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+CreatePost{
+background-color: #444;
+
+
+}
+.form{
+  display: flex;
+  background-color:cadetblue ;
+}
+
+
+.EditPost {
+  background-color: #4444;
+}
+
+
+.Home {
+  background-color: burlywood;
+
+}
+
+.Login {
+  background-color: #4444;
+  
+}
+
+.Navbar {
+  display:flex;
+  background-color: burlywood;
+
+}
+.button{
+  color:aquamarine;
+
+}
+.posts {
+  display:flex;
+  background-color: #4444;
+}
+
+
+.Profile {
+  display:flex;
+  background-color: burlywood;
+}
+
+.Register {
+  display:flex;
+  background-color: aqua;
+}
+.register-form{
+  display: flex;
+  flex-grow:1;
+  justify-content: center;
+
+}
+.SinglePostView {
+  background-color: #4444;
+}
