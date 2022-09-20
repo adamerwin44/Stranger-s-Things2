@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Adam's Version of Stranger's Things!</h1>
+        <h2 style ={{color:"blue"}}>Home Page!</h2>;
       <button>
        
       </button>

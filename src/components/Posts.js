@@ -20,7 +20,7 @@ const Posts = ({ posts }) => {
             }}>
               <input
                type = 'text'
-               placeholder = 'Search'
+               placeholder = 'Enter Search information here'
                onChange = {(event) => setSearchTerm(event.target.value)}
               ></input>
               <button type='Search'>Search</button>

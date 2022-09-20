@@ -7,26 +7,26 @@ const [description, setDescription] = useState('');
 const [price, setPrice] = useState('');
 const [location, setLocation] = useState('');
 const [willDeliver, setWillDeliver] = useState('');
-<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>  
+<h2 style ={{color:"blue"}}>Create Post !</h2>;
 const newPost = {
   
-    title,
-    description,
-    price,
-    location,
-    willDeliver
+    title:'New Title',
+    description:'New Description',
+    price:'Price',
+    location:'New location',
+    willDeliver:'False'
   }
 
   async function addPost() {
     const result = await createPost(token, newPost)
-        console.log(result)
-    fetchPosts();
-    navigate('/posts')
+      fetchPosts();
+      navigate('/posts')
   }
+  
   return (
     // This needs to be a form that accepts the 5 request parameters for creating a post
     <>
-     <form  class='form' onSubmit={(event) => {
+     <form  className='form' onSubmit={(event) => {
       event.preventDefault();
       addPost();
    
@@ -62,7 +62,7 @@ const newPost = {
         placeholder='Will deliver'
         onChange={(event) => setWillDeliver(event.target.checked)}
       />
-    <button type="submit">Create a New Post</button>
+    <button onClick={() => addPost()}>Add a New Post</button>
     </form>
     </>
   )

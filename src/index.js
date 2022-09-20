@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
-// import './style.css';
-
 
 import {
   Navbar,
@@ -93,8 +91,7 @@ const App = () => {
             posts={ posts }
             token={ token }
             fetchPosts = { fetchPosts }
-            navigate = {navigate }
-          />}
+           />}
         />
         <Route
           path='/posts/:postID'
@@ -182,14 +179,7 @@ root.render(
 
   
 
-// const container = document.querySelector('container');
-// const root = ReactDOM.createRoot(container);
-// root.render(
-//     <BrowserRouter>
-//     <App />
-//     </BrowserRouter>
-// );
-    
+
 
     
     

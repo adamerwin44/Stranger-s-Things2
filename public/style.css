@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+.posts {
+  display:flex;
+  background-color: #4444;
+  margin: 1px;
+  padding:.5px;
+}
 
 body {
   height: 100vh;
@@ -16,12 +22,10 @@ body {
   grid-template-columns: 290px 1fr;
   grid-template-rows: auto auto 1fr;
   grid-gap: 6px;
-  
+ 
   height: 100%;
   width: 100%;
-
   overflow: hidden;
-
   background: #444;
 }
 
@@ -36,6 +40,13 @@ header > h1 {
   font-size: 40px;
   font-family: cursive, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+header > h2 {
+  background-color: #19a7ff;
+  padding-left: 7px;
+  font-size:25px;
+  font-family: cursive, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+}
 
 CreatePost{
 background-color: #444;
@@ -44,9 +55,17 @@ background-color: #444;
 }
 .form{
   display: flex;
+  width: 60%;
+  height: 60%;
+
   background-color:cadetblue ;
 }
-
+#form{
+  display: flex;
+  width: 60%;
+  height: 60%;
+  background-color:cadetblue ;
+}
 
 .EditPost {
   background-color: #4444;
@@ -71,10 +90,6 @@ background-color: #444;
 .button{
   color:aquamarine;
 
-}
-.posts {
-  display:flex;
-  background-color: #4444;
 }
 
 

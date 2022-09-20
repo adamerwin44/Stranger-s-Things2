@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createMessage } from '../api';
-<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>
+import EditPost from './EditPost';
+
+<h1 style ={{color:"blue"}}>Welcome to Adam's Version of Stranger's Things!</h1>;
 const SendMessage = ({ postID, token }) => {
    const [message, setMessage] = useState({content: ''});
   // we need 3 things to make this request
@@ -48,6 +50,12 @@ const SinglePostView = ({ posts, token }) => {
       {
         activateMessage && <SendMessage postID={postID} token={token}/>
       }
+      <EditPost 
+          token={ token } 
+          posts={ posts } 
+          />
+
+      
     </div>
   )
 }

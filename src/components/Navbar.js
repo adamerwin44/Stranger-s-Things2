@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from "@mui/material/Button"
-
 
 
 const Navbar = ({ logout, token }) => {
@@ -10,20 +8,20 @@ const Navbar = ({ logout, token }) => {
     <header>
       <h1>Welcome to Adam's Version of Stranger's Things!</h1>
       <nav>
-        <Button variant = "contained" color= "error" ></Button>
-        <Link to='/'>Home</Link>
-        <Link to='/posts'>Posts</Link>
-        <Link to='/profile'>Profile</Link>
+       
+        <Link to='/'> Home </Link>
+        <Link to='/posts'> Posts </Link>
+        <Link to='/profile'> Profile </Link>
+        <Link class="link" to='/posts/create-post'>Create Post</Link>
         
         {
           token ? (
             <Link to='/' onClick={ () => logout() }>Logout</Link>
           ) : (
             <>
-              <Link to='/register'>Register</Link>
-              <Link to='/login'>Login</Link>
-              <Link to='/EditPost'>EditPost</Link>
-              
+              <Link to='/register'> Register </Link>
+              <Link to='/login'> Login </Link>
+                           
             </>
           )
         }
